@@ -28,6 +28,7 @@ a:active, a:focus {
 
 /* line 25, ../sass/screen.scss */
 .navbar-default {
+  box-shadow: 4px 4px 13px #797979;
   border: none;
   background: white;
 }
@@ -39,7 +40,7 @@ a:active, a:focus {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 32, ../sass/screen.scss */
+  /* line 33, ../sass/screen.scss */
   .navbar-brand, .navbar-right, .navbar-right.nav-pills {
     margin-left: 45px;
     margin-top: 60px;
@@ -47,21 +48,21 @@ a:active, a:focus {
   }
 }
 
-@media screen and (max-width: 1025px) and (min-width: 768px) {
-  /* line 39, ../sass/screen.scss */
+@media screen and (max-width: 1028px) and (min-width: 768px) {
+  /* line 40, ../sass/screen.scss */
   .navbar-right {
     margin-left: 45px;
     margin-top: 30px;
     transform: translateY(-50%) scale(0.8);
   }
-  /* line 41, ../sass/screen.scss */
+  /* line 42, ../sass/screen.scss */
   .navbar-right .navbar-nav li a {
     padding: 10px 10px;
   }
 }
 
-@media screen and (max-width: 1025px) and (min-width: 768px) {
-  /* line 49, ../sass/screen.scss */
+@media screen and (max-width: 1028px) and (min-width: 768px) {
+  /* line 50, ../sass/screen.scss */
   .navbar-right.nav-pills {
     position: absolute;
     bottom: 1rem;
@@ -70,46 +71,46 @@ a:active, a:focus {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 49, ../sass/screen.scss */
+  /* line 50, ../sass/screen.scss */
   .navbar-right.nav-pills {
     margin: 2rem 0 0;
   }
 }
 
-/* line 60, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 .navbar-right {
   margin-left: 0;
 }
 
 @media screen and (min-width: 768px) {
-  /* line 63, ../sass/screen.scss */
+  /* line 64, ../sass/screen.scss */
   .navbar-collapse {
     padding-right: 0;
   }
 }
 
 @media screen and (min-width: 768px) {
-  /* line 68, ../sass/screen.scss */
+  /* line 69, ../sass/screen.scss */
   .navbar-header {
     margin-left: 5rem !important;
   }
 }
 @media screen and (max-width: 1025px) and (min-width: 768px) {
-  /* line 68, ../sass/screen.scss */
+  /* line 69, ../sass/screen.scss */
   .navbar-header {
     margin-left: 3rem !important;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  /* line 76, ../sass/screen.scss */
+  /* line 77, ../sass/screen.scss */
   .navbar .container {
     max-width: 100%;
     width: 100%;
   }
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .navbar-brand {
   height: 50px;
   border-radius: 20px;
@@ -117,68 +118,72 @@ a:active, a:focus {
   background-color: #428bca;
   border-color: #428bca;
 }
-/* line 88, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .navbar-brand:hover {
   color: white !important;
   background-color: #428bca !important;
   border-color: #428bca !important;
 }
 @media screen and (max-width: 768px) {
-  /* line 82, ../sass/screen.scss */
+  /* line 83, ../sass/screen.scss */
   .navbar-brand {
     background: transparent;
     color: #428bca !important;
   }
-  /* line 96, ../sass/screen.scss */
+  /* line 97, ../sass/screen.scss */
   .navbar-brand:hover {
     background: transparent !important;
     color: #428bca !important;
   }
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .fa {
   font-size: 24px;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 #facebook {
   margin-right: 1rem;
   overflow: hidden;
-  color: #333333;
-  border-radius: 100%;
-  border: 2px solid #333333;
+  color: #666666;
 }
 @media screen and (min-width: 768px) {
-  /* line 107, ../sass/screen.scss */
+  /* line 108, ../sass/screen.scss */
   #facebook {
     margin-right: 14px;
   }
 }
-/* line 116, ../sass/screen.scss */
-#facebook:hover {
+/* line 115, ../sass/screen.scss */
+#facebook a {
+  color: #666666;
+  border: 2px solid #666666;
+  border-radius: 100%;
+}
+/* line 119, ../sass/screen.scss */
+#facebook a:hover {
   border: 2px solid white;
 }
 
-/* line 121, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 #facebook a:hover {
   color: white;
   background: #428bca;
 }
 
-/* line 126, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 #number {
   height: 40px;
   border-radius: 30px;
   overflow: hidden;
 }
 
-/* line 132, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .fa-phone {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
-/* line 136, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .jumbotron {
   background: url("images/helloNurse.jpg") no-repeat;
   background-position: left top;
@@ -186,14 +191,86 @@ a:active, a:focus {
   height: 400px;
 }
 @media screen and (min-width: 1280px) {
-  /* line 136, ../sass/screen.scss */
+  /* line 140, ../sass/screen.scss */
   .jumbotron {
     height: 550px;
   }
 }
 @media screen and (orientation: portrait) {
-  /* line 136, ../sass/screen.scss */
+  /* line 140, ../sass/screen.scss */
   .jumbotron {
     background-position: 50% top;
   }
+}
+
+/* line 153, ../sass/screen.scss */
+input, select, textarea {
+  max-width: 100%;
+}
+
+/* line 156, ../sass/screen.scss */
+form {
+  margin: 80px 0 200px;
+}
+
+/* line 159, ../sass/screen.scss */
+form .btn-primary {
+  margin-top: 40px;
+  text-transform: uppercase;
+  width: 100%;
+  border-radius: 50px;
+  height: 50px;
+  font-weight: bold;
+}
+
+/* line 168, ../sass/screen.scss */
+.form-group {
+  margin-bottom: 30px;
+}
+
+/* line 172, ../sass/screen.scss */
+#userMessage {
+  min-height: 240px;
+}
+
+/* line 176, ../sass/screen.scss */
+h2 {
+  text-align: center;
+  margin: 130px 0 40px;
+}
+@media screen and (max-width: 1028px) {
+  /* line 176, ../sass/screen.scss */
+  h2 {
+    margin: 65px 0 40px;
+  }
+}
+
+/* line 184, ../sass/screen.scss */
+p {
+  text-align: center;
+  font-size: 16px;
+}
+
+/* line 188, ../sass/screen.scss */
+.row {
+  margin: 0;
+}
+
+/* line 191, ../sass/screen.scss */
+.location {
+  height: 540px;
+}
+
+/* line 196, ../sass/screen.scss */
+.addy {
+  background: #428bca;
+  height: 100%;
+}
+
+/* line 201, ../sass/screen.scss */
+.map {
+  height: 100%;
+  background: url("images/map.jpg") no-repeat center center;
+  background-position: center center;
+  background-size: cover;
 }

@@ -23,6 +23,7 @@ a {
     text-transform:uppercase;
 }
 .navbar-default {
+  box-shadow:4px 4px 13px #797979;
   border:none;
   background:white;
   @media screen and (min-width:768px) {
@@ -37,7 +38,7 @@ a {
   }
 }
 .navbar-right {
-  @media screen and (max-width:1025px) and (min-width:768px){
+  @media screen and (max-width:1028px) and (min-width:768px){
     .navbar-nav li a {
       padding:10px 10px;
     }
@@ -47,7 +48,7 @@ a {
   }
 }
 .navbar-right.nav-pills {
-  @media screen and (max-width:1025px) and (min-width:768px){
+  @media screen and (max-width:1028px) and (min-width:768px){
     position:absolute;
     bottom:1rem;
     right:6rem;
@@ -107,14 +108,17 @@ a {
 #facebook {
   margin-right:1rem;
   overflow:hidden;
-  color:$nav-dark;
-  border-radius:100%;
-  border:2px solid $nav-dark;
+  color: adjust-lightness($nav-dark, 20%);
   @media screen and (min-width:768px) {
     margin-right:14px;
   }
-  &:hover {
-      border:2px solid white;
+  a {
+  color: adjust-lightness($nav-dark, 20%);
+  border:2px solid adjust-lightness($nav-dark, 20%);
+  border-radius:100%;
+    &:hover {
+        border:2px solid white;
+    }
   }
 }
 
@@ -130,7 +134,7 @@ a {
 }
 
 .fa-phone {
-  margin-right:5px;
+  margin-right:8px;
 }
 
 .jumbotron {
@@ -144,4 +148,59 @@ a {
   @media screen and (orientation:portrait){
     background-position:50% top;
   }
+}
+
+input, select, textarea {
+  max-width:100%;
+}
+form {
+  margin: 80px 0 200px;
+}
+form .btn-primary {
+  margin-top:40px;
+  text-transform:uppercase;
+  width:100%;
+  border-radius:50px;
+  height:50px;
+  font-weight:bold;
+}
+
+.form-group {
+  margin-bottom:30px;
+}
+
+#userMessage {
+  min-height:240px;
+}
+
+h2 {
+  text-align:center;
+  margin:130px 0 40px;
+  @media screen and (max-width:1028px){
+    margin: 65px 0 40px;
+  }
+}
+
+p {
+  text-align:center;
+  font-size:16px;
+}
+.row {
+  margin:0;
+}
+.location {
+  height:540px;
+//  width:100%;
+}
+
+.addy {
+  background:$blue;
+  height:100%;
+}
+
+.map {
+ height:100%;
+ background:url('images/map.jpg') no-repeat center center; //Fallback in case google API acts wonky
+ background-position:center center;
+ background-size:cover;
 }

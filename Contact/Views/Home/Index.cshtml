@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -6,30 +6,39 @@
 
 </div>
 <div class="container body-content">
-<div class="row">
-<div class="col-md-10 col-md-push-2">
-sumfing
-</div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+  <div class="row">
+    <div class="col-md-8 col-md-push-2">
+      <h2>Get in Touch</h2>
+      <p>If you have any questions or comments, we&#39;d love to hear from you. Just fill out the form below and we&#39;ll get back to you soon. Rest assured that any information you provide will remain confidential.</p>
+
+
+      <form>
+
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Subject"></textarea>
+        </div>
+
+        <div class="form-group">
+          <textarea id='userMessage' class="form-control" rows="4" placeholder="Message"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+  </div>
 </div>
-</div>
+  <div class="row">
+    <div class='location'>
+      <div class='col-md-6 addy'></div>
+      <div class='col-md-6 map' style="background:url('https://maps.googleapis.com/maps/api/staticmap?center=2500TechnologyDr, Louisville,KY40299&zoom=15&size=1200x800&markers=color:red|38.210247,-85.547809&key=AIzaSyB1OehJeYBTViiY-xdUCG7-pQGq0LA9Tew') no-repeat center center; background-size:cover;"></div>
+    </div>
+  </div>
