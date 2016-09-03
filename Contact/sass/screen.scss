@@ -1,0 +1,147 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//@import "compass/reset";
+
+$nav-dark :  adjust-lightness(black, 20%);
+$blue     :  #428bca;
+
+body {
+  @media screen and (min-width:768px) {
+    padding-top:120px;
+  }
+}
+
+@import "compass/typography/links/unstyled-link";
+a {
+    @include unstyled-link;
+}
+.navbar-default .navbar-nav > li > a {
+    color:$nav-dark;
+    text-transform:uppercase;
+}
+.navbar-default {
+  border:none;
+  background:white;
+  @media screen and (min-width:768px) {
+    height:120px;
+  }
+}
+.navbar-brand, .navbar-right, .navbar-right.nav-pills {
+  @media screen and (min-width:768px) {
+    margin-left:45px;
+    margin-top: 60px;
+    transform: translateY(-50%);
+  }
+}
+.navbar-right {
+  @media screen and (max-width:1025px) and (min-width:768px){
+    .navbar-nav li a {
+      padding:10px 10px;
+    }
+    margin-left:45px;
+    margin-top: 30px;
+    transform: translateY(-50%) scale(.8);
+  }
+}
+.navbar-right.nav-pills {
+  @media screen and (max-width:1025px) and (min-width:768px){
+    position:absolute;
+    bottom:1rem;
+    right:6rem;
+    transform:translateY(-15%);
+  }
+  @media screen and (max-width:768px){
+    margin:2rem 0 0;
+  }
+}
+.navbar-right{
+  margin-left:0;
+}
+.navbar-collapse {
+  @media screen and (min-width:768px) {
+  padding-right:0;
+  }
+}
+.navbar-header {
+    @media screen and (min-width:768px) {
+      margin-left:5rem !important;
+}
+  @media screen and (max-width:1025px) and (min-width:768px){
+    margin-left:3rem !important;
+  }
+}
+.navbar .container {
+  @media screen and (max-width:1200px){
+    max-width:100%;
+    width:100%;
+  }
+}
+.navbar-brand {
+  height:50px;
+  border-radius:20px;
+  color:white !important;
+  background-color: $blue;
+  border-color: $blue;
+  &:hover {
+    color:white !important;
+    background-color: $blue !important;
+    border-color: $blue !important;
+  }
+  @media screen and (max-width:768px) {
+    background:transparent;
+    color:$blue !important;
+    &:hover{
+      background:transparent !important;
+      color:$blue !important;
+    }
+  }
+}
+
+.fa {
+  font-size:24px;
+}
+
+#facebook {
+  margin-right:1rem;
+  overflow:hidden;
+  color:$nav-dark;
+  border-radius:100%;
+  border:2px solid $nav-dark;
+  @media screen and (min-width:768px) {
+    margin-right:14px;
+  }
+  &:hover {
+      border:2px solid white;
+  }
+}
+
+#facebook a:hover {
+  color:white;
+  background:$blue;
+}
+
+#number {
+  height:40px;
+  border-radius:30px;
+  overflow:hidden;
+}
+
+.fa-phone {
+  margin-right:5px;
+}
+
+.jumbotron {
+  background:url('images/helloNurse.jpg') no-repeat;
+  background-position:left top;
+  background-size:cover;
+  height:400px;
+  @media screen and (min-width:1280px) {
+    height:550px;
+  }
+  @media screen and (orientation:portrait){
+    background-position:50% top;
+  }
+}

@@ -1,0 +1,199 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@media screen and (min-width: 768px) {
+  /* line 11, ../sass/screen.scss */
+  body {
+    padding-top: 120px;
+  }
+}
+
+/* line 18, ../sass/screen.scss */
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+/* line 6, ../../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_unstyled-link.scss */
+a:active, a:focus {
+  outline: none;
+}
+
+/* line 21, ../sass/screen.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #333333;
+  text-transform: uppercase;
+}
+
+/* line 25, ../sass/screen.scss */
+.navbar-default {
+  border: none;
+  background: white;
+}
+@media screen and (min-width: 768px) {
+  /* line 25, ../sass/screen.scss */
+  .navbar-default {
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* line 32, ../sass/screen.scss */
+  .navbar-brand, .navbar-right, .navbar-right.nav-pills {
+    margin-left: 45px;
+    margin-top: 60px;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 1025px) and (min-width: 768px) {
+  /* line 39, ../sass/screen.scss */
+  .navbar-right {
+    margin-left: 45px;
+    margin-top: 30px;
+    transform: translateY(-50%) scale(0.8);
+  }
+  /* line 41, ../sass/screen.scss */
+  .navbar-right .navbar-nav li a {
+    padding: 10px 10px;
+  }
+}
+
+@media screen and (max-width: 1025px) and (min-width: 768px) {
+  /* line 49, ../sass/screen.scss */
+  .navbar-right.nav-pills {
+    position: absolute;
+    bottom: 1rem;
+    right: 6rem;
+    transform: translateY(-15%);
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 49, ../sass/screen.scss */
+  .navbar-right.nav-pills {
+    margin: 2rem 0 0;
+  }
+}
+
+/* line 60, ../sass/screen.scss */
+.navbar-right {
+  margin-left: 0;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 63, ../sass/screen.scss */
+  .navbar-collapse {
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* line 68, ../sass/screen.scss */
+  .navbar-header {
+    margin-left: 5rem !important;
+  }
+}
+@media screen and (max-width: 1025px) and (min-width: 768px) {
+  /* line 68, ../sass/screen.scss */
+  .navbar-header {
+    margin-left: 3rem !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 76, ../sass/screen.scss */
+  .navbar .container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* line 82, ../sass/screen.scss */
+.navbar-brand {
+  height: 50px;
+  border-radius: 20px;
+  color: white !important;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+/* line 88, ../sass/screen.scss */
+.navbar-brand:hover {
+  color: white !important;
+  background-color: #428bca !important;
+  border-color: #428bca !important;
+}
+@media screen and (max-width: 768px) {
+  /* line 82, ../sass/screen.scss */
+  .navbar-brand {
+    background: transparent;
+    color: #428bca !important;
+  }
+  /* line 96, ../sass/screen.scss */
+  .navbar-brand:hover {
+    background: transparent !important;
+    color: #428bca !important;
+  }
+}
+
+/* line 103, ../sass/screen.scss */
+.fa {
+  font-size: 24px;
+}
+
+/* line 107, ../sass/screen.scss */
+#facebook {
+  margin-right: 1rem;
+  overflow: hidden;
+  color: #333333;
+  border-radius: 100%;
+  border: 2px solid #333333;
+}
+@media screen and (min-width: 768px) {
+  /* line 107, ../sass/screen.scss */
+  #facebook {
+    margin-right: 14px;
+  }
+}
+/* line 116, ../sass/screen.scss */
+#facebook:hover {
+  border: 2px solid white;
+}
+
+/* line 121, ../sass/screen.scss */
+#facebook a:hover {
+  color: white;
+  background: #428bca;
+}
+
+/* line 126, ../sass/screen.scss */
+#number {
+  height: 40px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* line 132, ../sass/screen.scss */
+.fa-phone {
+  margin-right: 5px;
+}
+
+/* line 136, ../sass/screen.scss */
+.jumbotron {
+  background: url("images/helloNurse.jpg") no-repeat;
+  background-position: left top;
+  background-size: cover;
+  height: 400px;
+}
+@media screen and (min-width: 1280px) {
+  /* line 136, ../sass/screen.scss */
+  .jumbotron {
+    height: 550px;
+  }
+}
+@media screen and (orientation: portrait) {
+  /* line 136, ../sass/screen.scss */
+  .jumbotron {
+    background-position: 50% top;
+  }
+}
