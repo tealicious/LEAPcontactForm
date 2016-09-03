@@ -14,20 +14,24 @@
 
       <form>
 
-        <div class="form-group">
+        <div class="input-group">
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          <div class="input-group-addon">*</div>
         </div>
 
-        <div class="form-group">
+        <div class="input-group">
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <div class="input-group-addon">*</div>
         </div>
 
-        <div class="form-group">
-          <textarea class="form-control" placeholder="Subject"></textarea>
+        <div class="input-group">
+          <input class="form-control" placeholder="Subject"></input>
+          <div class="input-group-addon">*</div>
         </div>
 
-        <div class="form-group">
+        <div class="input-group">
           <textarea id='userMessage' class="form-control" rows="4" placeholder="Message"></textarea>
+          <div class="input-group-addon">*</div>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -38,7 +42,27 @@
 </div>
   <div class="row">
     <div class='location'>
-      <div class='col-md-6 addy'></div>
-      <div class='col-md-6 map' style="background:url('https://maps.googleapis.com/maps/api/staticmap?center=2500TechnologyDr, Louisville,KY40299&zoom=15&size=1200x800&markers=color:red|38.210247,-85.547809&key=AIzaSyB1OehJeYBTViiY-xdUCG7-pQGq0LA9Tew') no-repeat center center; background-size:cover;"></div>
+      <div class='col-md-6 addy'>
+        <div class='col-md-7 col-md-offset-5 expand-height'>
+          <div class="vertically-center">
+          <h2>Our Location</h2>
+          <ul>
+            <li><p>Example Site</p></li>
+            <li><p>2500 Technology Dr</p></li>
+            <li><p>Louisville, KY 40299</p></li>
+            <li><p class='link'>www.examplesite.com</p></li>
+          </ul>
+          <h3>Call Us</h3>
+          <ul>
+            <li><p>Louisville: 555-555-5555</p></li>
+            <li><p>San Antonio: 555-555-5555</p></li>
+            <li><p>Toll Free: 800-585-5555</p></li>
+          </ul>
+          <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-6 map link' style="background:url('https://maps.googleapis.com/maps/api/staticmap?center=2500TechnologyDr, Louisville,KY40299&zoom=15&size=1200x800&markers=color:red|38.210247,-85.547809&key=AIzaSyB1OehJeYBTViiY-xdUCG7-pQGq0LA9Tew') no-repeat center center; background-size:cover;">
+      </div>
     </div>
   </div>
