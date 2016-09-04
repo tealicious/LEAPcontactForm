@@ -189,13 +189,20 @@ form .btn-primary {
   font-weight:bold;
 }
 
-.form-group, .input-group {
+.form-group,  {
+  .glyphicon {
+    display:none !important;
+    position:absolute;
+    top:23px !important;
+    right:10px;
+    color:inherit;
+  }
   margin-bottom:30px;
-  .input-group-addon{
-    color:#ccc;
+  .input-group-addon, .form-group-addon{
+    //color:#ccc;
     vertical-align:top;
     padding:25px 12px 0;
-    background:white;
+    background:transparent;
     border-left:none;
     font-size:20px;
     box-sahdow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -297,13 +304,13 @@ footer {
   position:relative;
   display:table;
   width:100%;
-  min-height:160px;
+  height:160px;
   background:$purple;
   color:white;
   nav {
     width:100%;
     display:table-cell;
-    vertical-align:middle
+    vertical-align:middle;
   }
   @media screen and (max-width:768px) {
   padding:2rem;
@@ -335,24 +342,24 @@ nav ul {
   }
 }
 
-.error {
+/* .error {
     font-weight:bold;
     right: 5rem;
     top: 20px;
     color: firebrick;
     text-transform: uppercase;
-}
+} */
 
-label {
+/* label {
   position:absolute;
   @media screen and (max-width:600px) {
     opacity:0;
     /*display: block;
     top: auto !important;
     bottom: -55px;
-    left: 1.5rem;*/
+    left: 1.5rem;
   }
-}
+}  */
 
 .success {
   color:$blue;

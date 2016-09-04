@@ -16,24 +16,32 @@
 
       <form id="contactForm" action='' method='post'>
 
-        <div class="input-group">
-          <input required name="name" type="text" class="form-control" id="firstName" placeholder="First Name" value="@Request["name"]">
+        <div class="form-group">
+          <div class="input-group">
+          <input name="name" type="text" class="form-control" placeholder="First Name" />
           <div class="input-group-addon">*</div>
+          </div>
         </div>
 
-        <div class="input-group">
-          <input required name="email" type="email" class="form-control" id="Email" placeholder="Email" value="@Request["email"]" >
-          <div class="input-group-addon">*</div>
+        <div class="form-group">
+          <div class="input-group">
+            <input name="email" type="email" class="form-control" id="Email" placeholder="Email" value="@Request["email"]" >
+            <div class="input-group-addon">*</div>
+          </div>
         </div>
 
-        <div class="input-group">
-          <input required name="subject" class="form-control" placeholder="Subject"></input>
+        <div class="form-group">
+          <div class="input-group">
+          <input name="subject" class="form-control" placeholder="Subject"></input>
           <div class="input-group-addon">*</div>
+          </div>
         </div>
 
-        <div class="input-group">
-          <textarea required name="message" id='userMessage' class="form-control" rows="4" placeholder="Message"></textarea>
+        <div class="form-group">
+          <div class="input-group">
+          <textarea name="message" id='userMessage' class="form-control" rows="4" placeholder="Message"></textarea>
           <div class="input-group-addon">*</div>
+          </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

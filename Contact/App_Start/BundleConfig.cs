@@ -17,14 +17,18 @@ namespace Contact
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/jquery.validate.min.js",
+                     // "~/Scripts/jquery.validate.min.js",
                       "~/Scripts/scroll.js",
                       "~/Scripts/navScroll.js",
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrapValidator.min.js",
+                      "~/Scripts/validateController.js",
                       "~/Scripts/respond.js"));
+
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrapValidator.css",
                       "~/Content/site.css",
                       "~/Content/screen.css"));
         }

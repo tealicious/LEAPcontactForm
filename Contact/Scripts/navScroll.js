@@ -44,3 +44,35 @@ function hasScrolled() {
     }
     lastScrollTop = st;
 } */
+
+//ScrollTo certain sections of the site
+
+var scrollTo = function() {
+if (document.documentElement.clientWidth > 1060) {
+   $('a[href^="#"]').pageScroll({
+       speed: 1750,
+       maxDuration: 2500,
+       offset:-120
+   });
+ } else if (document.documentElement.clientWidth > 768) {
+  $('a[href^="#"]').pageScroll({
+      speed: 1750,
+      maxDuration: 2500,
+      offset:-180
+  });
+  } else {
+    $('a[href^="#"]').pageScroll({
+        speed: 1000, //mobile framerates can have a hard time when auto-scrolling too fast
+        maxDuration: 2500,
+        offset:-100
+    });
+  }
+}
+
+scrollTo();
+
+
+//reset scrollTo point on window resize based of breakpoints we have set
+$(window).resize(function() {
+  scrollTo();
+  });
