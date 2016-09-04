@@ -58,12 +58,34 @@
 
         </footer>
 
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    <script src="/Scripts/jQuery.validate.min.js"></script>
+
     <script>
+    //just spicing up the UX a bit with some click-scrolling and class-adding and removing for our nav, this stuff would get tucked away on a real project
+
+    var scrollTo = function() {
+    if (document.documentElement.clientWidth > 1060) {
+       $('a[href^="#"]').pageScroll({
+           speed: 1750,
+           maxDuration: 2500,
+           offset:-120
+       });
+     } else if (document.documentElement.clientWidth > 768) {
+      $('a[href^="#"]').pageScroll({
+          speed: 1750,
+          maxDuration: 2500,
+          offset:-180
+      });
+      } else {
+        $('a[href^="#"]').pageScroll({
+            speed: 1000, //mobile framerates can have a hard time when auto-scrolling too fast
+            maxDuration: 2500,
+            offset:-100
+        });
+      }
+    }
     $(document).ready(function () {
     $("#contactForm").validate({ // initialize the plugin
         rules: {
@@ -92,7 +114,12 @@
     }
     });
 
+    scrollTo();
     });
+
+    $(window).resize(function() {
+      scrollTo();
+      });
     </script>
 </body>
 </html>

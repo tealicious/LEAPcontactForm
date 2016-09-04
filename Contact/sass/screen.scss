@@ -1,6 +1,7 @@
 //I've made some variations to the comp, but only where I consider improvements to symmetry to be possible. These changes will be commented here in the SASS sheet
 @import "compass/css3/box-shadow";
 @import "compass/typography/links/unstyled-link";
+@import "compass/css3/transition";
 
 
 $nav-dark :  adjust-lightness(black, 20%);
@@ -53,14 +54,14 @@ a {
     }
     margin-left:45px;
     margin-top: 30px;
-    transform: translateY(-50%) scale(.8);
+    transform: translateY(-50%) scale(.9);
   }
 }
 .navbar-right.nav-pills {
   @media screen and (max-width:1060px) and (min-width:768px){
     position:absolute;
     bottom:1rem;
-    right:6rem;
+    right:4rem;
     transform:translateY(-15%);
   }
   @media screen and (max-width:768px){
@@ -156,7 +157,7 @@ a {
 }
 
 .jumbotron {
-  background:url('images/helloNurse.jpg') no-repeat; //I found a higher res version of the image provided in the comp and swapped it out. The photogrpher in me refuses to cut the tops of heads off in any hero image so the positioning of this image looks off to anyone scrutinizing in detail. That is because it is,for good reason and by conscious decision.
+  background:url('images/helloNurse.jpg') no-repeat; //I found a higher res version of the image provided in the comp and swapped it out. The photogrpher in me refuses to cut the tops of the heads off of people.
   background-position:left top;
   background-size:cover;
   height:400px;
@@ -193,12 +194,15 @@ form .btn-primary {
   .input-group-addon{
     color:#ccc;
     vertical-align:top;
-    padding:22px 12px 0;
+    padding:25px 12px 0;
     background:white;
     border-left:none;
     font-size:20px;
     box-sahdow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
   }
+  /*@media screen and (max-width:600px) {
+    margin-bottom: 60px;
+  }*/
 }
 
 .form-control:focus { //adding the blue highlight border-right on focus
@@ -284,7 +288,7 @@ ul {
   padding:0;
 }
 .map {
- background:url('images/map.jpg') no-repeat center center; //Fallback in case google API acts wonky. The new API key policy gave me trouble in WordPress' dev environments. Haven't had an issue with Visual Studio locally, but I'm interested to see if the embedded map works on your end or if this pops up.
+ background:url('images/map.jpg') no-repeat center center; //Fallback in case google API acts wonky.
  background-position:center center;
  background-size:cover;
 }
@@ -330,18 +334,24 @@ nav ul {
     //float:left;
   }
 }
+
+.error {
+    font-weight:bold;
+    right: 5rem;
+    top: 20px;
+    color: firebrick;
+    text-transform: uppercase;
+}
+
 label {
   position:absolute;
   @media screen and (max-width:600px) {
     opacity:0;
+    /*display: block;
+    top: auto !important;
+    bottom: -55px;
+    left: 1.5rem;*/
   }
-}
-.error {
-    //position: absolute;
-    right: 5rem;
-    top: 18px;
-    color: firebrick;
-    text-transform: uppercase;
 }
 
 .success {
@@ -349,4 +359,31 @@ label {
   font-weight:bold;
   font-size:18px;
   text-align:center;
+  @include transition(transform .7s);
+}
+
+.shrink {
+    @media screen and (min-width:1060px){
+    height:60px;
+    @include transition(all .3s );
+  }
+  .navbar-brand, .navbar-right, .navbar-right.nav-pills {
+      @media screen and (min-width:1060px){
+      margin-top:30px;
+      @include transition(all .3s );
+    }
+  }
+}
+
+.grow {
+  @media screen and (min-width:1060px){
+  height:120px;
+  @include transition(all .2s );
+}
+.navbar-brand, .navbar-right, .navbar-right.nav-pills {
+    @media screen and (min-width:1060px){
+    margin-top:60px;
+    @include transition(all .2s );
+  }
+}
 }
