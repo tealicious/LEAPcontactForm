@@ -47,7 +47,7 @@ a {
 .navbar-right {
   font-weight:bold;
   color:$nav-font;
-  @media screen and (max-width:1028px) and (min-width:768px){
+  @media screen and (max-width:1060px) and (min-width:768px){
     .navbar-nav li a {
       padding:10px 10px;
     }
@@ -57,7 +57,7 @@ a {
   }
 }
 .navbar-right.nav-pills {
-  @media screen and (max-width:1028px) and (min-width:768px){
+  @media screen and (max-width:1060px) and (min-width:768px){
     position:absolute;
     bottom:1rem;
     right:6rem;
@@ -164,7 +164,7 @@ a {
     height:550px;
   }
   @media screen and (orientation:portrait){
-    background-position:50% top;
+    background-position:30% top;
   }
 }
 
@@ -201,6 +201,15 @@ form .btn-primary {
   }
 }
 
+.form-control:focus {
+  border-right:1px solid #cccccc;
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+
+}
+
 #userMessage {
   min-height:240px;
   padding-top:18px;
@@ -209,7 +218,7 @@ form .btn-primary {
 .body-content h2 {
   text-align:center;
   margin:130px 0 40px;
-  @media screen and (max-width:1028px){
+  @media screen and (max-width:1060px){
     margin: 65px 0 40px;
   }
 }
@@ -322,4 +331,19 @@ nav ul {
   @media screen and (min-width:767px) {
     //float:left;
   }
+}
+
+.error {
+    //position: absolute;
+    right: 5rem;
+    top: 18px;
+    color: firebrick;
+    text-transform: uppercase;
+}
+
+.success {
+  color:$blue;
+  font-weight:bold;
+  font-size:18px;
+  text-align:center;
 }

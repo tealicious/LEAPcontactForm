@@ -62,5 +62,37 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="/Scripts/jQuery.validate.min.js"></script>
+    <script>
+    $(document).ready(function () {
+    $("#contactForm").validate({ // initialize the plugin
+        rules: {
+            name: {
+                required: true,
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            subject: {
+                required: true,
+                minlength: 3
+            },
+            message: {
+                required: true,
+                minlength: 3
+            }
+        },
+
+    submitHandler: function (form) {
+    event.preventDefault();
+    $('#userMessage').addClass('success').val('Thank you, your message has been delivered!');
+    $('input').val('');
+    return false;
+    }
+    });
+
+    });
+    </script>
 </body>
 </html>

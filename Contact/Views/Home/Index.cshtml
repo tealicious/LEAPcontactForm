@@ -1,5 +1,7 @@
 @{
     ViewBag.Title = "Home Page";
+
+
 }
 
 <div class="jumbotron">
@@ -12,25 +14,25 @@
       <p>If you have any questions or comments, we&#39;d love to hear from you. Just fill out the form below and we&#39;ll get back to you soon. Rest assured that any information you provide will remain confidential.</p>
 
 
-      <form>
+      <form id="contactForm" action='' method='post'>
 
         <div class="input-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          <input required name="name" type="text" class="form-control" id="firstName" placeholder="First Name" value="@Request["name"]">
           <div class="input-group-addon">*</div>
         </div>
 
         <div class="input-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input required name="email" type="email" class="form-control" id="Email" placeholder="Email" value="@Request["email"]" >
           <div class="input-group-addon">*</div>
         </div>
 
         <div class="input-group">
-          <input class="form-control" placeholder="Subject"></input>
+          <input required name="subject" class="form-control" placeholder="Subject"></input>
           <div class="input-group-addon">*</div>
         </div>
 
         <div class="input-group">
-          <textarea id='userMessage' class="form-control" rows="4" placeholder="Message"></textarea>
+          <textarea required name="message" id='userMessage' class="form-control" rows="4" placeholder="Message"></textarea>
           <div class="input-group-addon">*</div>
         </div>
 
