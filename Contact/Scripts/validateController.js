@@ -57,7 +57,8 @@ $('#contactForm').bootstrapValidator({
         $('#userMessage').addClass('success').val('Thank you ' + name + ', your message has been delivered!');
         //clear our form to reinforce success of delivery
         $('input').val(''); //hide our inputs
-        $('.has-success .glyphicon').css('opacity','0'); //hide our checkmoarks
+        $('.has-success .glyphicon').css('opacity','0');//hide our checkmoarks
+        //form.submit();
         return false;
       }
     });

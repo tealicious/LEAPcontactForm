@@ -1,5 +1,31 @@
+
 @{
     ViewBag.Title = "Home Page";
+}
+
+@{
+    var name = Request["name"];
+    var email = Request["email"];
+    var subject = Request["subject"];
+    var message = Request["message"];
+    var errorMessage ="";
+    var debuggingFlag = false;
+    try {
+        // Initialize WebMail helper
+        WebMail.SmtpServer = "your-SMTP-host";
+        WebMail.SmtpPort = 25;
+        WebMail.UserName = "your-user-name-here";
+        WebMail.Password = "your-account-password";
+        WebMail.From = "your-email-address-here";
+        // Send email
+        WebMail.Send(to: email,
+            subject: "Message from - " + name + " " + subject,
+            body: message
+        );
+    }
+    catch (Exception ex ) {
+        errorMessage = ex.Message;
+    }
 }
 
 <!-- comments and stylings found in sass/screen.scss file. custom js comments can be found in their respective files -->
@@ -25,7 +51,7 @@
 
         <div class="form-group">
           <div class="input-group">
-            <input name="email" type="email" class="form-control" id="Email" placeholder="Email" value="@Request["email"]" >
+            <input name="email" type="email" class="form-control" id="Email" placeholder="Email" >
             <div class="input-group-addon">*</div>
           </div>
         </div>
@@ -44,7 +70,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="engage" class="btn btn-primary">Submit</button>
 
       </form>
     </div>
@@ -60,7 +86,7 @@
             <li><p>Example Site</p></li>
             <li><p>2500 Technology Dr</p></li>
             <li><p>Louisville, KY 40299</p></li>
-            <li><p class='link'>www.examplesite.com</p></li>
+            <li><a href="#contact" class='link'><p>www.examplesite.com</p></a></li>
           </ul>
           <h3>Call Us</h3>
           <ul>
@@ -68,11 +94,11 @@
             <li><p>San Antonio: 555-555-5555</p></li>
             <li><p>Toll Free: 800-585-5555</p></li>
           </ul>
-          <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+          <a class="link" href="#contact"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a>
           </div>
         </div>
       </div>
-      <div class='col-md-6 map link' style="background:url('https://maps.googleapis.com/maps/api/staticmap?center=2500TechnologyDr, Louisville,KY40299&zoom=15&size=1200x800&markers=color:red|38.210247,-85.547809&key=AIzaSyB1OehJeYBTViiY-xdUCG7-pQGq0LA9Tew') no-repeat center center; background-size:cover;">
-      </div>
+      <a href="#contact"><div class='col-md-6 map link' style="background:url('https://maps.googleapis.com/maps/api/staticmap?center=2500TechnologyDr, Louisville,KY40299&zoom=15&size=1200x800&markers=color:red|38.210247,-85.547809&key=AIzaSyB1OehJeYBTViiY-xdUCG7-pQGq0LA9Tew') no-repeat center center; background-size:cover;">
+      </div></a>
     </div>
   </div>

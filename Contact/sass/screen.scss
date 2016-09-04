@@ -24,17 +24,32 @@ body {
 }
 
 a {
+  @include unstyled-link;
   &:hover {
     cursor:pointer;
+    text-decoation:none;
   }
-    @include unstyled-link;
+  &:visted {
+    color:initial;
+    background:initial;
+    text-decoation:none;
+  }
+  &:focus {
+    color:initial;
+    background:initial;
+    text-decoation:none;
+  }
+  &:active {
+    color:initial;
+    background:initial;
+    text-decoation:none;
+  }
 }
 .navbar-default .navbar-nav > li > a {
     color:$nav-dark;
     text-transform:uppercase;
 }
 .navbar-default {
-  box-shadow:0px 2px 6px #ababab;
   border:none;
   background:white;
   @media screen and (min-width:768px) {
@@ -131,7 +146,14 @@ a {
   }
   &:hover {
     cursor:pointer;
-    a {color:white;}
+    a {
+      color:white;
+      background:$blue;
+      &:hover {
+        color:white;
+        background:$blue;
+      }
+    }
     background:$blue;
     border:2px solid $blue;
   }
@@ -139,13 +161,12 @@ a {
   padding:0;
   color: adjust-lightness($nav-dark, 20%);
   transform:translate(0px, 1px) scale(1.7);// getting nitty-gritty on this facebook icon size and positioning. I hope my designer buys me a beer this weekend!
-  &:hover {
-    color:white;
-    background:initial;
-  }
+  background:transparent;
   }
 }
-
+.nav > li > a:hover, .nav > li > a:focus {
+  background:transparent; //go away bootstrap styles
+}
 
 #number {
   height:40px;
@@ -288,6 +309,18 @@ p {
 .link {
   &:hover {
     cursor:pointer;
+    color:white;
+    text-decoration:none;
+  }
+  &:focus {
+    cursor:pointer;
+    color:white;
+    text-decoration:none;
+  }
+  &:visited {
+    cursor:pointer;
+    color:white;
+    text-decoration:none;
   }
 }
 .map, .addy {
@@ -360,7 +393,10 @@ footer {
   padding:2rem;
   }
 }
-
+footer nav ul li a:active, footer nav ul li a:focus, footer nav ul li a:hover {
+color:white;
+text-decoration:none;
+}
 nav ul {
   display:block;
   text-align:center;
@@ -396,7 +432,9 @@ nav ul {
 
 //custom toggle nav classes paired to navScroll.js file
 .shrink {
+    box-shadow:0px 2px 6px #ababab;
     @media screen and (min-width:1060px){
+    box-shadow:0px 2px 6px #ababab;
     height:60px;
     @include transition(all .3s );
   }

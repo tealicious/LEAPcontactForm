@@ -14,13 +14,13 @@ $(window).scroll(function() {
 //Just adding a small bit of interactivity to engage our user
 var scrollTo = function() {
 if (document.documentElement.clientWidth > 1060) {
-   $('a[href^="#"]').pageScroll({
+   $('*[href^="#"]').pageScroll({
        speed: 1750,
        maxDuration: 2500,
        offset:-120
    });
- } else if (document.documentElement.clientWidth > 768) {
-  $('a[href^="#"]').pageScroll({
+ } else if (document.documentElement.clientWidth > 767) {
+  $('*[href^="#"]').pageScroll({
       speed: 1750,
       maxDuration: 2500,
       offset:-180
