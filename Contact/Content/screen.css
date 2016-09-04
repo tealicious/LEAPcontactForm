@@ -443,8 +443,14 @@ nav ul li:hover {
 label {
   position: absolute;
 }
+@media screen and (max-width: 600px) {
+  /* line 335, ../sass/screen.scss */
+  label {
+    opacity: 0;
+  }
+}
 
-/* line 336, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 .error {
   right: 5rem;
   top: 18px;
@@ -452,7 +458,7 @@ label {
   text-transform: uppercase;
 }
 
-/* line 344, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 .success {
   color: #0081b1;
   font-weight: bold;

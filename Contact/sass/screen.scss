@@ -332,7 +332,12 @@ nav ul {
     //float:left;
   }
 }
-label {position:absolute;}
+label {
+  position:absolute;
+  @media screen and (max-width:600px) {
+    opacity:0;
+  }
+}
 .error {
     //position: absolute;
     right: 5rem;
