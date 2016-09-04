@@ -439,6 +439,11 @@ nav ul li:hover {
   text-transform: uppercase;
 }
 
+/* line 335, ../sass/screen.scss */
+label {
+  position: absolute;
+}
+
 /* line 336, ../sass/screen.scss */
 .error {
   right: 5rem;
