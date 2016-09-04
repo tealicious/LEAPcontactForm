@@ -1,4 +1,5 @@
 //I've made some variations to the comp, but only where I consider improvements to symmetry to be possible. These changes will be commented here in the SASS sheet
+
 @import "compass/css3/box-shadow";
 @import "compass/typography/links/unstyled-link";
 @import "compass/css3/transition";
@@ -23,6 +24,9 @@ body {
 }
 
 a {
+  &:hover {
+    cursor:pointer;
+  }
     @include unstyled-link;
 }
 .navbar-default .navbar-nav > li > a {
@@ -30,7 +34,7 @@ a {
     text-transform:uppercase;
 }
 .navbar-default {
-  box-shadow:4px 4px 13px #afafaf;
+  box-shadow:0px 2px 6px #ababab;
   border:none;
   background:white;
   @media screen and (min-width:768px) {
@@ -38,7 +42,7 @@ a {
   }
 }
 .navbar-brand, .navbar-right, .navbar-right.nav-pills {
-  //This is my initial divergence, but I just feel very strongly about navs being vertically aligned along the same central horizon in their parent div. I'm doing that here by pushing these elements in bootstraps navbar down by half of the parent div's height using margin-top (120/2 = 60) and then transform:translating them up half of their own individual heights. Transform is a favorite CSS property of mine.
+  //This is my initial divergence, but I just feel very strongly about navs being vertically aligned along the same central horizon in their parent div. I'm doing that here by pushing these elements in bootstrap's navbar down by half of the parent div's height using margin-top (120/2 = 60) and then transform:translating them up half of their own individual heights. Transform is a favorite CSS property of mine, you will see it over and over.
   @media screen and (min-width:768px) {
     margin-left:45px;
     margin-top: 60px;
@@ -157,10 +161,13 @@ a {
 }
 
 .jumbotron {
+  &:hover {
+    cursor:pointer;
+  }
   background:url('images/helloNurse.jpg') no-repeat; //I found a higher res version of the image provided in the comp and swapped it out. The photogrpher in me refuses to cut the tops of the heads off of people.
   background-position:left top;
   background-size:cover;
-  height:400px;
+  height:400px; // maintaining the mackup's original 400px height where I can, but only until wider screen sizes demand more vertical clearance. I hope my designer understands, we can talk about it otherwise ¯\_(ツ)_/¯
   @media screen and (min-width:1280px) {
     height:550px;
   }
@@ -190,14 +197,15 @@ form .btn-primary {
 }
 
 .form-group,  {
+  margin-bottom:30px;
   .glyphicon {
-    display:none !important;
+    //display:none !important;
     position:absolute;
-    top:23px !important;
-    right:10px;
+    top:50% !important;
+    transform:translateY(-50%);
+    right:16px;
     color:inherit;
   }
-  margin-bottom:30px;
   .input-group-addon, .form-group-addon{
     //color:#ccc;
     vertical-align:top;
@@ -207,9 +215,42 @@ form .btn-primary {
     font-size:20px;
     box-sahdow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
   }
-  /*@media screen and (max-width:600px) {
-    margin-bottom: 60px;
-  }*/
+}
+
+.has-success { //set up some styles for validation states
+  .input-group{
+    width:100%;
+  }
+  .input-group-addon {
+    display:none;
+  }
+  .form-control:first-child { //after the input-group-addon element is collapsed, we have to re-establish the 100% .input-group width and put our borders and radiuses back up on the right sides of the .form-control element
+    box-shadow:none;
+    border-right:1px solid #468847;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .glyphicon {
+    color:#468847; //give our glyphicons matching colors to validation state
+  }
+}
+
+.has-error {
+  .input-group{
+    width:100%;
+  }
+  .input-group-addon {
+    display:none;
+  }
+  .form-control:first-child { //after the input-group-addon element is collapsed, we have to re-establish the 100% .input-group width and put our borders and radiuses back up on the right sides of the .form-control element
+    box-shadow:none;
+    border-right:1px solid #b94a48;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .glyphicon {
+    color:#b94a48; //give our glyphicons matching colors to validation state
+  }
 }
 
 .form-control:focus { //adding the blue highlight border-right on focus
@@ -218,6 +259,10 @@ form .btn-primary {
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+input::-ms-clear {
+  display:none; //get those gaudy 'X-to-clear-field' buttons out of here IE!
 }
 
 #userMessage {
@@ -272,7 +317,6 @@ p {
     }
   }
   .fa-facebook {
-    //font-size:22px;
       margin-top:25px;
       transform:translate(-.5px, 1px) scale(1.7);
   }
@@ -338,28 +382,8 @@ nav ul {
 }
 .bottom-nav li {
   @media screen and (min-width:767px) {
-    //float:left;
   }
 }
-
-/* .error {
-    font-weight:bold;
-    right: 5rem;
-    top: 20px;
-    color: firebrick;
-    text-transform: uppercase;
-} */
-
-/* label {
-  position:absolute;
-  @media screen and (max-width:600px) {
-    opacity:0;
-    /*display: block;
-    top: auto !important;
-    bottom: -55px;
-    left: 1.5rem;
-  }
-}  */
 
 .success {
   color:$blue;
@@ -369,6 +393,8 @@ nav ul {
   @include transition(transform .7s);
 }
 
+
+//custom toggle nav classes paired to navScroll.js file
 .shrink {
     @media screen and (min-width:1060px){
     height:60px;

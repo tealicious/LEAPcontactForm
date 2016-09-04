@@ -1,9 +1,9 @@
 $('#contactForm').bootstrapValidator({
-    /*   feedbackIcons: {
+       feedbackIcons: {
           valid: 'glyphicon glyphicon-ok',
           invalid: 'glyphicon glyphicon-remove',
           validating: 'glyphicon glyphicon-refresh'
-      }, */
+      },
       fields: {
           name: {
               validators: {
@@ -52,9 +52,12 @@ $('#contactForm').bootstrapValidator({
       },
 
       submitHandler: function(validator, form, submitButton) {
-        event.preventDefault();
-        $('#userMessage').addClass('success').val('Thank you, your message has been delivered!');
-        $('input').val('');
+        var name = validator.getFieldElements('name').val();
+        //personalize our confirmation of delivery message
+        $('#userMessage').addClass('success').val('Thank you ' + name + ', your message has been delivered!');
+        //clear our form to reinforce success of delivery
+        $('input').val(''); //hide our inputs
+        $('.has-success .glyphicon').css('opacity','0'); //hide our checkmoarks
         return false;
       }
     });
