@@ -16,7 +16,8 @@ body {
   }
   padding-bottom:0;
 }
-.nav-pills > li.active > a, .btn-primary {
+.nav-pills > li.active > a,.nav-pills > li.active > a:focus, .btn-primary {
+  background:$blue;
   &:hover {
   background:$blue;
   }
