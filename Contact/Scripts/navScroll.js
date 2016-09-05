@@ -19,17 +19,32 @@ if (document.documentElement.clientWidth > 1060) {
        maxDuration: 2500,
        offset:-120
    });
+   $('*[href^="#location"]').pageScroll({
+       speed: 1750,
+       maxDuration: 2500,
+       offset:-60
+   });
  } else if (document.documentElement.clientWidth > 767) {
   $('*[href^="#"]').pageScroll({
       speed: 1750,
       maxDuration: 2500,
       offset:-180
   });
+  $('*[href^="#location"]').pageScroll({
+      speed: 1750,
+      maxDuration: 2500,
+      offset:-120
+  });
   } else {
     $('a[href^="#"]').pageScroll({
         speed: 1000, //mobile framerates can have a hard time when auto-scrolling too fast
         maxDuration: 2500,
         offset:-100
+    });
+    $('*[href^="#location"]').pageScroll({
+        speed: 1750,
+        maxDuration: 2500,
+        offset:-50
     });
   }
 }
