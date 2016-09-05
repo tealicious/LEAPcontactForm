@@ -1,31 +1,23 @@
-
 @{
     ViewBag.Title = "Home Page";
 }
-
+@using System.Net.Mail;
 @{
-    var name = Request["name"];
-    var email = Request["email"];
-    var subject = Request["subject"];
-    var message = Request["message"];
-    var errorMessage ="";
-    var debuggingFlag = false;
-    try {
-        // Initialize WebMail helper
-        WebMail.SmtpServer = "your-SMTP-host";
-        WebMail.SmtpPort = 25;
-        WebMail.UserName = "your-user-name-here";
-        WebMail.Password = "your-account-password";
-        WebMail.From = "your-email-address-here";
-        // Send email
-        WebMail.Send(to: email,
-            subject: "Message from - " + name + " " + subject,
-            body: message
-        );
-    }
-    catch (Exception ex ) {
-        errorMessage = ex.Message;
-    }
+    if (IsPost)
+    {
+        var email = Request["email"];
+        var subject = Request["subject"];
+        var message = Request["message"];
+        using (var client = new SmtpClient())
+        {
+             var msg = new MailMessage();
+             msg.To.Add(email);
+             msg.Subject = subject;
+             msg.Body = message;
+             client.Send(msg);
+             <text>The email has been successfully sent</text>
+         }
+     }
 }
 
 <!-- comments and stylings found in sass/screen.scss file. custom js comments can be found in their respective files -->
@@ -58,7 +50,7 @@
 
         <div class="form-group">
           <div class="input-group">
-          <input name="subject" class="form-control" placeholder="Subject"></input>
+          <input name="subject" class="form-control" placeholder="Subject" ></input>
           <div class="input-group-addon">*</div>
           </div>
         </div>
@@ -70,7 +62,7 @@
           </div>
         </div>
 
-        <button type="submit" name="engage" class="btn btn-primary">Submit</button>
+        <button type="submit" name="send" class="btn btn-primary">Submit</button>
 
       </form>
     </div>

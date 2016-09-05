@@ -54,9 +54,10 @@ $('#contactForm').bootstrapValidator({
       submitHandler: function(validator, form, submitButton) {
         var name = validator.getFieldElements('name').val();
         //personalize our confirmation of delivery message
-        $('#userMessage').addClass('success').val('Thank you ' + name + ', your message has been delivered!');
+        $('#userMessage').addClass('success').css('border-color','#cccccc').val('Thank you ' + name + ', your message has been delivered!');
         //clear our form to reinforce success of delivery
-        $('input').val(''); //hide our inputs
+        //$('textarea');
+        $('input').val('').css('border-color','#cccccc'); //hide our inputs
         $('.has-success .glyphicon').css('opacity','0');//hide our checkmoarks
         //form.submit();
         return false;
