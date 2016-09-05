@@ -19,6 +19,23 @@
          }
      }
 }
+<!--
+
+    I wanted to wrap this whole project up in a tidy little bow by having it email you its contents, but after fumbling around on google, asp.net, and stack overflow, I've realized that form submission in Razor and visual studio will take me a little longer to learn on my own than may be reasonable for this small exercise. The above code is as far as I ever got and I was never even sure if I was starting in the right place. So for consolation: here's how I'd have done it if this were a PHP document!
+
+<?php
+if($_POST["submit"]) {
+    $recipient="carterdanielr@gmail.com, $senderEmail";
+    $subject="Contact Message from Example Site";
+    $sender=$_POST["name"];
+    $senderEmail=$_POST["email"];
+    $message=$_POST["message"];
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <contact@examplesite.com>");
+}
+?>
+-->
 
 <!-- comments and stylings found in sass/screen.scss file. custom js comments can be found in their respective files -->
 
