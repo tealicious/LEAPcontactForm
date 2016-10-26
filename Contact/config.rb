@@ -8,7 +8,7 @@ sass_dir = "sass"
 images_dir = "images"
 javascripts_dir = "javascripts"
 
-#sourcemap = true
+sourcemap = true
 
 
 # You can select your preferred output style here (can be overridden via the command line):
